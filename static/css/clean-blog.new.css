@@ -67,7 +67,7 @@ p {
 a {
   color: #3f3f7f;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a:focus, a:hover {
@@ -75,14 +75,18 @@ a:focus, a:hover {
   text-decoration: none;
 }
 
+article .footnote a {
+  text-decoration: none;
+  box-shadow: none;
+}
+
 article strong {
   font-weight: 400;
 }
 
 article a {
-  color: #3f3f7f;
-  text-decoration: underline;
-  font-weight: 400;
+  text-decoration: none;
+  box-shadow: 0 -1px 0 #0066cc inset;
 }
 
 article a:focus:not(:has(img)),
@@ -495,7 +499,7 @@ dd {
 
 .footnote {
   color: #555;
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 .footnote li > p {
