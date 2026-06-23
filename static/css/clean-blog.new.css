@@ -4,12 +4,13 @@
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=IBM+Plex+Mono:wght@400;500;600&family=Roboto+Condensed:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans:wght@600&family=Roboto+Condensed:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap');
 
 :root {
   --font-body: "Source Sans 3", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-head: "Antonio", "Open Sans Condensed", sans-serif;
+  --font-menu: "Noto Sans", sans-serif;
 }
 
 body {
@@ -67,7 +68,6 @@ p {
 a {
   color: #3f3f7f;
   text-decoration: none;
-  font-weight: 400;
 }
 
 a:focus, a:hover {
@@ -85,7 +85,6 @@ article strong {
 }
 
 article a {
-  text-decoration: none;
   box-shadow: 0 -1px 0 #0066cc inset;
 }
 
@@ -148,6 +147,8 @@ hr.small {
   left: 0;
   width: 100%;
   z-index: 3;
+  font-family: var(--font-menu);
+  font-weight: 600;
 }
 
 .navbar-custom .navbar-brand {
@@ -350,12 +351,12 @@ figcaption {
   font-style: italic;
   margin: 0;
   display: block;
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 footer {
   padding: 50px 0 65px;
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 footer .list-inline {
@@ -534,7 +535,7 @@ table caption {
   caption-side: bottom;
   text-align: center;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: .8em;
   color: #505050;
 }
 
@@ -607,7 +608,7 @@ img.aligncenter, img.alignleft, img.alignright {
   font-style: italic;
   margin: 0;
   display: block;
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 .tags p > a {
@@ -628,7 +629,7 @@ img.aligncenter, img.alignleft, img.alignright {
   border-left: 5px solid;
   border-radius: 4px;
   color: #333;
-  font-size: 0.8em;
+  font-size: .8em;
   margin: 20px;
   margin-bottom: 40px;
   padding: 10px 20px 20px 20px;
