@@ -637,7 +637,7 @@ img.aligncenter, img.alignleft, img.alignright {
 
 .admonition-title {
   font-family: var(--font-head);
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
