@@ -16,7 +16,7 @@
   --text-color: #303030;
   --head-color: #606060;
   --text-header: #eaeaea;
-  --link-color: #3f3f7f;
+  --link-color: #558;
   --link-bg-color: #e7e7e7;
   --quote-color: #558;
   --select-color: #eee;
@@ -90,7 +90,23 @@ a {
   text-decoration: none;
 }
 
-article .footnote a {
+article sup a {
+  margin-left: .1em;
+  color: var(--link-color);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+article sup a:hover {
+  background: none !important;
+}
+
+article p {
+  text-align: justify;
+}
+
+article .footnote a,
+article .footnote a:hover {
   text-decoration: none;
   box-shadow: none;
 }
@@ -100,13 +116,14 @@ article strong {
 }
 
 article a {
-  box-shadow: 0 -1px 0 #0066cc inset;
+  box-shadow: 0 -1px 0 var(--link-color) inset;
 }
 
 article a:focus:not(:has(img)),
 article a:hover:not(:has(img)) {
   background-color: var(--link-bg-color);
   text-decoration: none;
+  box-shadow: none;
   border-radius: 3px;
   padding: 0 5px;
   margin: 0 -5px;
@@ -332,8 +349,8 @@ blockquote p {
 }
 
 .post-preview > .post-meta {
-  font-size: .75em;
-  color: grey;
+  font-size: 85%;
+  color: var(--text-color);
   font-style: italic;
   margin-top: 0;
   text-align: right;
@@ -637,4 +654,8 @@ img.aligncenter, img.alignleft, img.alignright {
 .important .admonition-title::before {
   content: "\f06d";
   color: var(--important-color);
+}
+
+.fa-tag {
+  color: var(--link-color);
 }

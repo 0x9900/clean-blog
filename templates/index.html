@@ -38,6 +38,7 @@
           {% if article.summary %}
           <p>{{ article.summary|striptags }}</p>
           {% endif %}
+
           <p class="post-meta">Posted on {{ article.locale_date }}
             {% include 'comments.html' %}
           </p>
