@@ -6,8 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans:wght@600&family=Roboto+Condensed:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap');
 
 :root {
+  color-scheme: light dark;
+  --bg-color: #fff;
   --font-body: "Source Sans 3", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace; /* was "JetBrains Mono", which isn't imported */
+  --font-mono: "IBM Plex Mono", monospace;
   --font-head: "Antonio", "Open Sans Condensed", sans-serif;
   --font-menu: "Noto Sans", sans-serif;
   --text-menu: #efefef;
@@ -30,6 +32,61 @@
   --tip-color: #27ae60;
   --danger-color: #c0392b;
   --important-color: #3f51d5;
+  --admonition-mix: white;
+  --letter-bg: #efe;
+  --draw-bg: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #16161a;
+    --text-color: #c9c9c9;
+    --head-color: #9a9a9a;
+    --link-color: #9b9ee6;
+    --link-bg-color: #2b2b3a;
+    --quote-color: #9b9ee6;
+    --select-color: #fff;
+    --select-bg: #046478;
+    --code-bg: #3a252a;
+    --hr-color: #b98a5c;
+    --shadow-color: #3a3a3a;
+    --table-th-bg: #2a2a2a;
+    --admonition-mix: #1a1a1a;
+    --letter-bg: #454;
+    --draw-bg: #999;
+  }
+}
+
+/* manual override for a theme-toggle button, e.g. document.documentElement.dataset.theme = "dark" */
+[data-theme="dark"] {
+  --bg-color: #16161a;
+  --text-color: #c9c9c9;
+  --head-color: #9a9a9a;
+  --link-color: #9b9ee6;
+  --link-bg-color: #2b2b3a;
+  --quote-color: #9b9ee6;
+  --select-color: #fff;
+  --select-bg: #046478;
+  --code-bg: #3a252a;
+  --hr-color: #b98a5c;
+  --shadow-color: #3a3a3a;
+  --table-th-bg: #2a2a2a;
+  --admonition-mix: #1a1a1a;
+}
+[data-theme="light"] {
+  --bg-color: #fff;
+  --text-color: #303030;
+  --head-color: #606060;
+  --link-color: #558;
+  --link-bg-color: #e7e7e7;
+  --quote-color: #558;
+  --select-color: #eee;
+  --select-bg: #0085a1;
+  --code-bg: #ebd2d8;
+  --hr-color: #836235;
+  --shadow-color: #cecece;
+  --table-th-bg: #d6d6d6;
+  --admonition-mix: white;
 }
 
 body {
@@ -37,6 +94,8 @@ body {
   font-family: var(--font-body);
   font-weight: 300;
   color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color .2s, color .2s;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-head);
@@ -250,7 +309,6 @@ blockquote p {
 }
 
 @media (max-width: 767px) {
-  /* justified text reads badly in a narrow column */
   article p {
     text-align: left;
   }
@@ -262,14 +320,12 @@ blockquote p {
   .post-preview p {
     margin-left: 0;
   }
-  /* wide tables scroll horizontally instead of squeezing or overflowing */
   table {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  /* floated images leave almost no room for text at phone widths */
   .alignleft, img.alignleft,
   .alignright, img.alignright {
     display: block;
@@ -346,7 +402,6 @@ blockquote p {
   margin-top: 60px;
 }
 
-/* captions (figcaption and .image-caption were identical, merged) */
 figcaption,
 .image-caption {
   display: block;
@@ -500,6 +555,24 @@ img.aligncenter, img.alignleft, img.alignright {
   text-align: right;
 }
 
+.letter {
+  font-family: "Comic Sans MS", sans-serif;  /* because Frank loves Comic Sans */
+  color: var(--text-color);
+  background-color: var(--letter-bg);
+  box-shadow: 5px 10px 5px var(--shadow-color);
+  border: 1px solid var(--shadow-color);
+  padding: 1em;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.drawing {
+  margin-top: 1em;
+  padding: 1rem;
+  background-color: var(--draw-bg);
+  border: 2px solid var(--shadow-color);
+}  
+
 .MathJax_Display, .MathJax_SVG {
   font-size: .9em !important;
 }
@@ -534,7 +607,7 @@ img.aligncenter, img.alignleft, img.alignright {
   background-color: var(--admonition-bg);
 }
 .note {
-  --admonition-bg: color-mix(in srgb, var(--note-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--note-color) 15%, var(--admonition-mix));
   border-color: var(--note-color);
 }
 .note .admonition-title::before {
@@ -542,7 +615,7 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--note-color);
 }
 .info {
-  --admonition-bg: color-mix(in srgb, var(--info-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--info-color) 15%, var(--admonition-mix));
   border-color: var(--info-color);
 }
 .info .admonition-title::before {
@@ -550,7 +623,7 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--info-color);
 }
 .warning {
-  --admonition-bg: color-mix(in srgb, var(--warning-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--warning-color) 15%, var(--admonition-mix));
   border-color: var(--warning-color);
 }
 .warning .admonition-title::before {
@@ -558,7 +631,7 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--warning-color);
 }
 .danger {
-  --admonition-bg: color-mix(in srgb, var(--danger-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--danger-color) 15%, var(--admonition-mix));
   border-color: var(--danger-color);
 }
 .danger .admonition-title::before {
@@ -566,7 +639,7 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--danger-color);
 }
 .tip {
-  --admonition-bg: color-mix(in srgb, var(--tip-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--tip-color) 15%, var(--admonition-mix));
   border-color: var(--tip-color);
 }
 .tip .admonition-title::before {
@@ -574,7 +647,7 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--tip-color);
 }
 .important {
-  --admonition-bg: color-mix(in srgb, var(--important-color) 15%, white);
+  --admonition-bg: color-mix(in srgb, var(--important-color) 15%, var(--admonition-mix));
   border-color: var(--important-color);
 }
 .important .admonition-title::before {
