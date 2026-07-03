@@ -58,6 +58,10 @@ a {
   color: var(--link-color);
   text-decoration: none;
 }
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
 
 /* draft watermark */
 .draft {
@@ -67,7 +71,7 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  font-size: 12em;
+  font-size: clamp(3rem, 18vw, 12em);
   font-weight: bold;
   text-transform: uppercase;
   font-family: var(--font-head);
@@ -135,9 +139,9 @@ blockquote::before {
   content: "\201C";
   position: absolute;
   top: -30px;
-  left: -20px;
+  left: clamp(-8px, -2vw, -20px);
   font-family: "Times New Roman", serif;
-  font-size: 5rem;
+  font-size: clamp(3rem, 10vw, 5rem);
   color: color-mix(in srgb, var(--quote-color) 80%, white);
   text-shadow: 2px 2px color-mix(in srgb, var(--quote-color) 60%, white);
 }
@@ -201,10 +205,6 @@ blockquote p {
   .navbar-right {
     margin-right: 0;
   }
-  .intro-header .page-heading h1,
-  .intro-header .site-heading h1 {
-    font-size: 4rem;
-  }
   .intro-header .page-heading,
   .intro-header .post-heading,
   .intro-header .site-heading {
@@ -244,12 +244,40 @@ blockquote p {
   .navbar-custom.is-visible {
     transform: translate3d(0, 100%, 0);
   }
-  .intro-header .page-heading h1,
-  .intro-header .site-heading h1 {
-    font-size: 8rem;
-  }
   .intro-header {
     height: 380px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* justified text reads badly in a narrow column */
+  article p {
+    text-align: left;
+  }
+  .intro-header .page-heading,
+  .intro-header .post-heading,
+  .intro-header .site-heading {
+    padding: 60px 15px 30px;
+  }
+  .post-preview p {
+    margin-left: 0;
+  }
+  /* wide tables scroll horizontally instead of squeezing or overflowing */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* floated images leave almost no room for text at phone widths */
+  .alignleft, img.alignleft,
+  .alignright, img.alignright {
+    display: block;
+    float: none;
+    margin: 0 auto 12px;
+  }
+  .admonition {
+    margin: 15px 0;
   }
 }
 
@@ -272,9 +300,10 @@ blockquote p {
 .intro-header .page-heading h1,
 .intro-header .site-heading h1 {
   margin-top: 0;
+  font-size: clamp(2.25rem, 6vw + 1rem, 8rem);
 }
 .intro-header .post-heading h1 {
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 6vw, 3rem);
 }
 .intro-header .page-heading .subheading,
 .intro-header .post-heading .meta,
