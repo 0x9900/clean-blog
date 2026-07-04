@@ -35,6 +35,7 @@
   --admonition-mix: white;
   --letter-bg: #efe;
   --draw-bg: #eee;
+  --separator: #aaa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,10 +55,11 @@
     --admonition-mix: #1a1a1a;
     --letter-bg: #454;
     --draw-bg: #999;
+    --separator: #444;
   }
 }
 
-/* manual override for a theme-toggle button, e.g. document.documentElement.dataset.theme = "dark" */
+/* manual override for a theme-toggle button, document.documentElement.dataset.theme = "dark" */
 [data-theme="dark"] {
   --bg-color: #16161a;
   --text-color: #c9c9c9;
@@ -72,6 +74,9 @@
   --shadow-color: #3a3a3a;
   --table-th-bg: #2a2a2a;
   --admonition-mix: #1a1a1a;
+  --letter-bg: #454;
+  --draw-bg: #999;
+  --separator: #444;
 }
 [data-theme="light"] {
   --bg-color: #fff;
@@ -87,6 +92,9 @@
   --shadow-color: #cecece;
   --table-th-bg: #d6d6d6;
   --admonition-mix: white;
+  --letter-bg: #efe;
+  --draw-bg: #eee;
+  --separator: #aaa;
 }
 
 body {
@@ -136,6 +144,10 @@ img, iframe, video {
   font-family: var(--font-head);
   color: rgba(1, 1, 1, .05);
   transform: rotate(-45deg);
+}
+
+.container hr {
+    border-top: 1px solid var(--separator);
 }
 
 pre {
