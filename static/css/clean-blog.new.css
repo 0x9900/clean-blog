@@ -586,7 +586,7 @@ img.aligncenter, img.alignleft, img.alignright {
 }  
 
 .MathJax_Display, .MathJax_SVG {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
   color: inherit;
 }
 
