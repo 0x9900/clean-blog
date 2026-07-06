@@ -118,29 +118,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    {% if SOCIAL_NETWORK %}
-                    <ul class="list-inline text-center">
-                        {% for social, icon in SOCIAL_NETWORK %}
-                        <li><a href="{{ social }}" target="_blank" rel="noopener noreferrer nofollow"><i class="{{ icon }}"></i></a></li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                    <p class="copyright text-muted">
-                    Blog powered by <a href="https://blog.getpelican.com" target="_blank" rel="noopener noreferrer nofollow">Pelican</a>, using the heavily modified 
-                    <a href="https://github.com/0x9900/pelican-clean-blog" target="_blank" rel="noopener noreferrer nofollow">clean-blog</a> theme.<br>
-                    Content licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="licence noopener noreferrer nofollow">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
-                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="licence noopener noreferrer nofollow">
-                        <img alt="Creative Commons License" width="80" height="15" style="border-width:0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAABGdBTUEAANbY1E9YMgAAAJZQTFRF////7u7u3d3dys7KzMzMyMzIxsrGxcbFur+6u7u7s7iyq7GqqqqqmZmZlJmTj5CPiIiIh4eHhoaGgICAfYJ9d3d3cnZxZ2tnZmZmW15bVVVVS0xLREREQ0NDQkJCQUJBOz07OTs5MzMzMTMxLjAuJygnJCUjIiIiISEhICAgGRkZERERDxAPDg4ODQ4NDQ0NDQ0MAAAADbeuvgAAANNJREFUeNqtk2kTgiAQhl/KzlWzgw6j+7Ayq/3/f64hTPNLNskOMMwuPLzsAtiygWHVNJC0TThIXSrxierXv/UZoJ8E2SHqQNQeVgSuT7lqh2dEjXk14C2AE7ESiiMHakdU773igF5keu5AKXDEHUQhpIyF50LeiNotEzct4+XO78AxO0JXJdzqO8uEqNvMBKUaYcbXDD8qVNNYSA/yXlRYEISfFNI9gBvzVCje1rDYF3L4sf+d03Lg5my5yv6jnwGXRwvvkMY8SHmrS9WfYvsvW7YnkDuZd7/ChBQAAAAASUVORK5CYII="></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include "footer.html" %}
 
     <!-- jQuery -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
