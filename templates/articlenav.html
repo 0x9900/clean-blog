@@ -1,0 +1,13 @@
+<div class="article-nav">
+  <div class="nav-prev">
+    {% if article.prev_article %}
+    <a href="{{ SITEURL }}/{{ article.prev_article.url }}" title="{{ article.prev_article.title }}"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+    {% endif %}
+  </div>
+
+  <div class="nav-next">
+    {% if article.next_article %}
+    <a href="{{ SITEURL }}/{{ article.next_article.url }}" title="{{ article.next_article.title }}"><i class="fa-solid fa-arrow-right fa-lg"></i></a>
+    {% endif %}
+  </div>
+</div>
