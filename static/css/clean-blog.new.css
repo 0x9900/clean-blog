@@ -258,12 +258,54 @@ blockquote p {
   background-color: rgba(127, 127, 127, .3);
 }
 
+/* pager */
+.pagination {
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  width: 100%;
+}
+
+.left-column {
+  padding: 20px;
+  text-align: left;
+}
+
+.center-column {
+  padding: 20px;
+  text-align: center;
+}
+
+.right-column {
+  padding: 20px;
+  text-align: right;
+}
+
+.pagination .nb_page {
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--link-bg-color);
+  border: 1px solid var(--shadow-color); 
+  border-radius: 10px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: var(--link-color);
+  background-color: var(--link-bg-color);
+  border: 1px solid var(--link-color);
+  border-radius: 10px;
+}
+
+.pagination a:hover {
+  background-color: color-mix(in srgb, var(--link-bg-color) 80%, var(--link-color));
+  border-color: var(--link-color);
+}
+
+
 @media (min-width: 768px) {
   body, html {
     font-size: 16px;
-  }
-  .pager li > a, .pager li > span {
-    padding: 15px 20px;
   }
   .navbar-custom {
     background: 0 0;
@@ -453,21 +495,6 @@ footer .container a {
 
 .btn {
   text-transform: uppercase;
-}
-.pager {
-  margin: 20px 0;
-}
-.pager li > a, .pager li > span {
-  padding: 10px;
-  margin-left: .7em;
-  color: var(--link-color);
-  background-color: var(--link-bg-color);
-  border-radius: 10px;
-}
-.pager li > a:focus,
-.pager li > a:hover {
-  background-color: color-mix(in srgb, var(--link-bg-color) 80%, var(--link-color));
-  border-color: var(--link-color);
 }
 
 ::selection {
@@ -682,7 +709,6 @@ img.aligncenter, img.alignleft, img.alignright {
   color: var(--important-color);
 }
 
-
 .article-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -704,10 +730,11 @@ img.aligncenter, img.alignleft, img.alignright {
 .nav-next a {
   display: inline-block;
   text-decoration: none;
-  color: var(--link-color);
   padding: 10px 15px;
-  border-radius: 10px;
+  color: var(--link-color);
   background-color: var(--link-bg-color);
+  border: 1px solid var(--link-color);
+  border-radius: 10px;
 }
 
 .nav-prev a:hover,
