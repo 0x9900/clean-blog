@@ -85,15 +85,13 @@
         {{ article.content }}
     </article>
 
-    <hr>
-
     {% if article.tags %}
     <div class="tags">
       <p>
-	{% for tag in article.tags %}
-	<span class="fa fa-tag"></span>&nbsp;<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
-	{% if not loop.last %}&nbsp;&nbsp;&nbsp;{% endif %}
-	{% endfor %}
+      {% for tag in article.tags %}
+        <span class="fa fa-tag"></span>&nbsp;<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
+        {% if not loop.last %}&nbsp;&nbsp;&nbsp;{% endif %}
+      {% endfor %}
       </p>
     </div>
     {% endif %}

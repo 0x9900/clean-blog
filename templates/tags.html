@@ -22,15 +22,14 @@
 {% endblock header %}
 
 {% block content %}
-    <ul>
+<ul>
   {% for tag, articles in tags|sort %}
-    {% if articles|count > 1 %}
-      <li>{{ tag }} ({{ articles|count }})</li>
-      {% for article in articles %}
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a><br>
-      {% endfor %}
-      <hr>
-    {% endif %}
+  {% if articles|count > 1 %}
+  <li>{{ tag }} ({{ articles|count }})</li>
+  {% for article in articles %}
+  <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a><br>
   {% endfor %}
-    </ul>
+  {% endif %}
+  {% endfor %}
+</ul>
 {% endblock content %}
