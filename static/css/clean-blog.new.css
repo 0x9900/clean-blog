@@ -260,6 +260,8 @@ blockquote p {
   display: grid;
   grid-template-columns: 15% 1fr 15%;
   width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid var(--hr-color);
 }
 
 .left-column {
