@@ -8,7 +8,7 @@
 :root {
   color-scheme: light dark;
   --bg-color: #fef;
-  --footer-bg: #444;
+  --footer-bg: #223;
   --footer-text: #9a9;
   --footer-link: #99c;
   --font-body: "Source Sans 3", sans-serif;
@@ -262,6 +262,7 @@ blockquote p {
   width: 100%;
   padding-top: 10px;
   border-top: 1px solid var(--hr-color);
+  border-radius: unset;
 }
 
 .left-column {
